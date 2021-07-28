@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6278F026B1CF4E00A53A3B /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A6278EF26B1CF4E00A53A3B /* AddAssignmentView.swift */; };
 		1AFB62C726B1C2AE0060D745 /* Assignment_NotebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB62C626B1C2AE0060D745 /* Assignment_NotebookApp.swift */; };
 		1AFB62C926B1C2AE0060D745 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB62C826B1C2AE0060D745 /* ContentView.swift */; };
 		1AFB62CB26B1C2B30060D745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AFB62CA26B1C2B30060D745 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A6278EF26B1CF4E00A53A3B /* AddAssignmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
 		1AFB62C326B1C2AE0060D745 /* Assignment Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFB62C626B1C2AE0060D745 /* Assignment_NotebookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment_NotebookApp.swift; sourceTree = "<group>"; };
 		1AFB62C826B1C2AE0060D745 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				1AFB62C626B1C2AE0060D745 /* Assignment_NotebookApp.swift */,
 				1AFB62C826B1C2AE0060D745 /* ContentView.swift */,
+				1A6278EF26B1CF4E00A53A3B /* AddAssignmentView.swift */,
 				1AFB62D526B1CC430060D745 /* AssignmentList.swift */,
 				1AFB62CA26B1C2B30060D745 /* Assets.xcassets */,
 				1AFB62CF26B1C2B30060D745 /* Info.plist */,
@@ -144,6 +147,7 @@
 				1AFB62D626B1CC430060D745 /* AssignmentList.swift in Sources */,
 				1AFB62C926B1C2AE0060D745 /* ContentView.swift in Sources */,
 				1AFB62C726B1C2AE0060D745 /* Assignment_NotebookApp.swift in Sources */,
+				1A6278F026B1CF4E00A53A3B /* AddAssignmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
