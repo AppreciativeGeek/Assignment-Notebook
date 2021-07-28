@@ -25,7 +25,7 @@ struct AddAssignmentView: View {
                     }
                 }
                 TextField("Description", text: $description)
-                DatePicker("Due Date", selection: $dueDate)
+                DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
             }
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
             .navigationBarItems(trailing: Button("Save") {
