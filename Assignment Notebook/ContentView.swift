@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var assignmentItems = [AssignmentItem(course: "Math", description: "Finish Assignment", dueDate: Date()),
-                              AssignmentItem(course: "Reading", description: "Read 10 pages of a book.", dueDate: Date()),
-                              AssignmentItem(course: "Science", description: "Follow Experient Instructions", dueDate: Date())]
+    @State private var assignmentItems =
+        [AssignmentItem(course: "Math", description: "Finish Assignment", dueDate: Date()),
+         AssignmentItem(course: "Reading", description: "Read 10 pages of a book.", dueDate: Date()),
+         AssignmentItem(course: "Science", description: "Follow Experient Instructions", dueDate: Date())]
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List {
+                ForEach (assignmentItems) { item in
+                    Text(item.description)
+                }
+            }
+            .navigationTitle("Assignment Notebook")
+        }
     }
 }
 
