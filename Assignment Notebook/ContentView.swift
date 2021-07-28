@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    // Defining variables.
     @ObservedObject var assignmentList = AssignmentList()
     @State private var showingAddAssignmentView = false
     
     var body: some View {
         NavigationView {
             List {
+                // Displaying each assignment.
                 ForEach (assignmentList.items) { item in
                     HStack {
                         VStack (alignment: .leading) {
@@ -26,16 +28,29 @@ struct ContentView: View {
                     }
                 }
                 .onMove(perform: { indices, newOffset in
+                    // Updating assingment list when items are moved.
                     assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
                 })
                 .onDelete(perform: { indexSet in
+                    // Updating assignment list when items are deleted.
                     assignmentList.items.remove(atOffsets: indexSet)
                 })
             }
             .sheet(isPresented: $showingAddAssignmentView, content: {
+                // Adding Assignment sheet.
                 AddAssignmentView(assignmentList: assignmentList)
             })
-            .navigationBarTitle(Text("Assignment Notebook"), displayMode: .inline)
+            // Added Navigation Titles and Buttons.
+            .toolbar(content: {
+                ToolbarItem(placement: .principal) {
+                    HStack {
+                        Image(systemName: "square.and.pencil")
+                        Text("Assignment Notebook")
+                            .font(.title2)
+                            .bold()
+                    }
+                }
+            })
             .navigationBarItems(leading: EditButton(),
                                 trailing: Button(action: {showingAddAssignmentView = true}) {
                                     Image(systemName: "plus")
@@ -50,6 +65,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// Creating AssignmentItem Structure
 struct AssignmentItem : Identifiable, Codable {
     var id = UUID()
     var course = String()

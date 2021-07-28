@@ -7,7 +7,9 @@
 
 import Foundation
 
+// Creating AssignmentList class.
 class AssignmentList : ObservableObject {
+    // ObservableObject
     @Published var items : [AssignmentItem] {
         didSet {
             let encoder = JSONEncoder()
@@ -17,6 +19,7 @@ class AssignmentList : ObservableObject {
         }
     }
     
+    // Initialization function.
     init() {
         if let items = UserDefaults.standard.data(forKey: "data") {
             let decoder = JSONDecoder()

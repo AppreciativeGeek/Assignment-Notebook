@@ -8,25 +8,31 @@
 import SwiftUI
 
 struct AddAssignmentView: View {
+    // Defining and getting variables.
     @ObservedObject var assignmentList: AssignmentList
     @State private var course = ""
     @State private var description = ""
     @State private var dueDate = Date()
     
     @Environment(\.presentationMode) var presentationMode
-    static let courses = ["Math", "Reading", "Science", "History", "Georgaphy"]
+    static let courses = [["Math", "plus.slash.minus"], ["Reading", "pencil"], ["Science", "leaf.arrow.circlepath"], ["History", "clock"], ["Georgaphy", "globe"], ["Magic", "wand.and.stars"]]
     
     var body: some View {
         NavigationView {
+            // Form that is used to pick values.
             Form {
                 Picker("Course", selection: $course) {
-                    ForEach(Self.courses, id: \.self) { course in
-                        Text(course)
+                    ForEach(Self.courses, id: \.self[0]) { course in
+                        HStack {
+                            Image(systemName: course[1])
+                            Text(course[0])
+                        }
                     }
                 }
                 TextField("Description", text: $description)
                 DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
             }
+            // Adding navigation bar title and buttons.
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
             .navigationBarItems(trailing: Button("Save") {
                 if course.count > 0 && description.count > 0 {
